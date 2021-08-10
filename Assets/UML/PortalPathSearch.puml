@@ -1,0 +1,16 @@
+﻿@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+while(not sourceList.Empty())
+    :TakeOneSource();
+    if (use merge A*) then(true)
+        :MergeA*();
+    else(false)
+        :A*();
+    endif
+    :StoreSearchResult();
+end while    
+stop
+
+@enduml

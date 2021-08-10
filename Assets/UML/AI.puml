@@ -1,0 +1,12 @@
+﻿@startuml
+
+
+start
+partition Sense {
+    :CalcDistanceToPlayer;
+    :CalcVisibilityToPlayer;
+    :CalcRVO;
+}
+stop
+
+@enduml
