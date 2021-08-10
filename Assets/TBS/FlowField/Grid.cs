@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace FFPF
+namespace TBS.FlowField
 {
     [StructLayout(LayoutKind.Sequential, Pack = 8, Size = 16)]
     public struct Grid

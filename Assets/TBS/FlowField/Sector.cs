@@ -1,4 +1,4 @@
-﻿namespace FFPF
+﻿namespace TBS.FlowField
 {
     public struct Sector
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace FFPF
+namespace TBS.FlowField
 {
     public class Map
     {

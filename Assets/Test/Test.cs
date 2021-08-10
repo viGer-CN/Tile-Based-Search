@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using Grid = FFPF.Grid;
+using Grid = TBS.FlowField.Grid;
 
 namespace Test
 {
