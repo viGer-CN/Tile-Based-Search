@@ -12,7 +12,7 @@ namespace Test
             //Debug.Log(Hash(9999,10000));
             //Debug.Log(Hash(5547,3453));
             //Debug.Log(Hash(3453,5547));
-            Debug.Log(ushort.MaxValue);
+            Debug.Log(sizeof(TBS.JPSP.Grid));
         }
 
         int Hash(int x, int y)
