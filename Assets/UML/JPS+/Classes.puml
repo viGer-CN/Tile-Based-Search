@@ -6,10 +6,28 @@ class Grid{
     int y;
     uint8 cost;
     bit4 primaryJump;
-    int8/16[4] straightJump; //根据地图动态调整int8还是16
-    int8/16[4] diagonalJump; //根据地图动态调整int8还是16
-    
+    int8/16[4] straightJump; //根据地图动态调整int8还是16 负值表示到墙面的距离
+    int8/16[4] diagonalJump; //根据地图动态调整int8还是16 负值表示到墙面的距离
+}
+Grid --*Sector
+
+class Sector{
+    //x|y
+    int16/32 id; 
+    //以sectorSize为单位的坐标 0,0是地图origin
+    uint8/16 x; 
+    uint8/16 y;
+    Grid[] grids;
+}
+Sector --*Map
+
+class Map{
+    Vector2 origin;
+    float gridSize;
+    Sector[] sectors;
+    Dict<int,int> sectorIdToIndex;
 }
 
+legend 用portal支持3D地图（上下会重叠的）和多地图导航
 
 @enduml
