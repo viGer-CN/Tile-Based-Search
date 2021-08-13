@@ -10,7 +10,9 @@ class Grid{
     bit4 primaryJump;
     int16[4] straightJump; 
     int16[4] diagonalJump;
+    uint8 portalId;
 }
+
 Grid --*Sector
 
 class Sector{
@@ -24,10 +26,20 @@ class Sector{
 Sector --*Map
 
 class Map{
+    int id;
+    string name;
     Vector2 origin;
     float gridSize;
     Sector[] sectors;
     Dict<int,int> sectorIdToIndex;
+    Portal[] portals;
+}
+
+class Portal
+{
+    uint8 portalId;
+    int mapId;
+    int sectorId;
 }
 
 legend 用portal支持3D地图（上下会重叠的）和多地图导航
