@@ -1,0 +1,41 @@
+﻿@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:起始节点加入openlist;
+while (openList not empty)
+    :get lowest heuristic cost node from openList;
+    if (node == goalNode) then (true);
+        break
+    endif
+    :foreach neighbor in node.neighbors;
+    :newCost = node.cumulateCost + neighbor.cost;
+    if (neighbor in openList) then (true)
+        if(newCost < neighbor.totalCost) then (true)
+            :neighbor.totalCost = newCost;
+            :neighbor.parent = node;       
+        endif
+    else if(neighbor in closeList) then(true)
+        if (newCost < neighbor.totalCost) then (true)
+            :neighbor.totalCost = newCost;
+            :neighbor.parent = node;
+            :remove neighbor from closeList;
+            :add neighbor to openList;
+        endif
+    else (false)
+        :neighbor.totalCost = newCost;
+        :neighbor.parent = node;
+        :neighbor.hCost = CalcHeuristicCost(neighbor)
+        :add neighbor to openList;
+    endif    
+end while
+
+if (found goal) then (true)
+    :back traverse get path;
+    stop
+else(false)
+    :path not found;
+    stop
+endif
+
+@enduml
