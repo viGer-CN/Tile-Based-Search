@@ -1,6 +1,6 @@
 ﻿namespace TBS.JPSP
 {
-    public struct Sector
+    public struct JPSSector
     {
         //x|y
         public int id;
